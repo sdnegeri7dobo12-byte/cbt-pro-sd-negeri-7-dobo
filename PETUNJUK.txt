@@ -1,0 +1,39 @@
+CBT PRO — APLIKASI INSTALASI
+============================
+
+Paket ini membungkus aplikasi CBT Pro dari Google Apps Script dengan ikon sekolah
+yang Anda kirim dan menjadikannya Progressive Web App (PWA), sehingga dapat
+dipasang dari browser pada laptop dan HP.
+
+FILE PENTING
+- index.html                 Halaman aplikasi
+- manifest.webmanifest       Identitas dan pengaturan instalasi
+- sw.js                      Service worker untuk menyimpan kerangka aplikasi
+- icons/                     Ikon aplikasi dari gambar yang Anda unggah
+
+CARA MEMASANG / MEMPUBLIKASIKAN
+1. Ekstrak seluruh isi ZIP ini.
+2. Unggah seluruh isi folder (jangan hanya index.html) ke hosting web yang
+   mendukung HTTPS dan file statis. Contoh: GitHub Pages, Netlify, atau hosting
+   sekolah.
+3. Buka alamat HTTPS hasil publikasi.
+4. Laptop (Chrome/Edge): pilih ikon Instal di bilah alamat atau menu browser
+   > Instal CBT Pro.
+5. Android: buka alamat HTTPS dengan Chrome > menu ⋮ > Instal aplikasi /
+   Tambahkan ke layar utama.
+6. iPhone/iPad: buka dengan Safari > tombol Bagikan > Add to Home Screen.
+
+CATATAN PENTING
+- Aplikasi CBT yang asli tetap berada di Google Apps Script:
+  https://script.google.com/macros/s/AKfycbxymDxNRrWlIInl64NYkOX2YXy5fhkWfk4-lUgD6w29S26F8B62N1i-owu4E1ihnwSiYA/exec
+- Paket ini adalah aplikasi pemasang/pembungkus (PWA), bukan pemindahan backend.
+- Konten ujian, login, dan data CBT tetap memerlukan koneksi internet karena
+  dilayani oleh Google Apps Script. Service worker hanya menyimpan tampilan
+  pembungkus dan ikon; bukan menyimpan soal atau jawaban untuk ujian offline.
+- Halaman Google Apps Script dimuat di dalam bingkai. Jika pengaturan keamanan
+  deployment Google menolak pemuatan di dalam bingkai, tombol "Buka Penuh"
+  tetap tersedia untuk membuka CBT langsung. Agar tampil sepenuhnya di dalam
+  aplikasi, deployment Apps Script harus mengizinkan pemuatan dalam iframe
+  (X-Frame-OptionsMode.ALLOWALL) dan tetap menerapkan pemeriksaan akses yang sesuai.
+- Pastikan URL deployment Apps Script masih aktif dan izin aksesnya sesuai
+  kebijakan sekolah.
